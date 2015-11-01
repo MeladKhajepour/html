@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Snake Game</title>
+  <link rel='stylesheet' href='style.css' type='text/css'/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body id='body'>
+  <div class='container'>
+    <div class='c'>
+
+      <!--Start Screen-->
+      <div id='start_screen'>
+        <button class='btn btn-success' id='start_btn' onclick='start()'>Click to Start</button>
+      </div>
+
+      <!--Play Again Screen-->
+      <div id='overlay'>
+        Your Final Score: <span id='final_score'></span>
+        <br>
+        <a class='btn btn-default btn-success btn-block' onclick='location.reload()' href='#' id='play_again'>Click to play again</a>
+      </div>
+      <canvas id='canvas' width='600' height='450'></canvas>
+      <div id='stats'>
+        <div id='score'></div>
+        <div id='high_score'></div>
+        <div class='btn-group pull-right'>
+          <button class='btn btn-primary btn-lg' onclick='resetScore()' id='reset_score'>Reset high score</button>
+          <button class='btn btn-lg btn-primary' data-toggle='modal' data-target='#settings'><span class='glyphicon glyphicon-cog'></span></button>
+        </div>
+      </div>
+
+      <!--Settings Menu-->
+      <div class='modal fade' id='settings'>
+        <div class='modal-dialog'>
+          <div class='modal-content'>
+            <div class='modal-header'>
+              <h1>Settings</h1>
+            </div>
+            <div class='modal-body'>
+              <h4>Speed</h4>
+              <form id='speed'>
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" value="210"> Very Slow
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" value="180"> Slow
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" value="140" checked> Medium
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" value="100"> Fast
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" value="70"> Very Fast
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" value="45">  Insane
+                </label>
+              </form>
+              <h4>Color</h4>
+              <form id='colour'>
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" value="red"> Red
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" value="blue"> Blue
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" value="green"> Green
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" value="yellow"> Yellow
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" value="#5E35B1" checked> Purple
+                </label>
+              </form>
+              <div class='modal-footer'>
+                <button class="btn btn-primary" data-dismiss='modal' onclick="setParams()">Save Changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!--jquery-->
+  <script src='https://code.jquery.com/jquery-2.1.4.js'></script>
+  <!--JS-->
+  <script src='script.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>

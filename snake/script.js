@@ -16,7 +16,7 @@ $(document).ready(function() {
     //Snake Array
     var snake_array;
 
-    //Initializer
+    //Initialize
     $(function() {
 
       init = function() {

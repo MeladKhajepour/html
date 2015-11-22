@@ -1,79 +1,37 @@
-function Stack(){
-    var top = null;
-    var count = 0;
+var stack = document.getElementById('stack');
+var block = stack.lastElementChild;
 
-    //Returns the number of items in the queue
-    this.GetCount = function(){
-        return count;
-    }
+function shift() {
+  block.nextElementSibling.style.backgroundColor = '#333';
+}
 
-    /* Methods */
-    this.Push = function (data) {
-    //Creates a node containing the data and a reference to the next item, if any.
-    var node = {
-        data: data,
-        next: null
-    };
+function shift2() {
+  stack.style.backgroundColor = '#5C6BC0';
+}
 
-    //links the current node to the top node. If the stack is empty it will have null as reference
-    node.next = top;
-
-    //makes the current node as the top node.
-    top = node;
-
-    //Increases the count
-    count++;
-    }
-    this.Peek = function(){
-	//If there are no items, returns null. (avoid error)
-    if(top === null){
-		  return null;
-	  }
-	  else{
-		  return top.data;
-	  }
+function push() {
+  block.style.visibility = 'visible';
+  if(block == stack.firstElementChild) {
+    block.nextElementSibling.style.backgroundColor = 'red';
+    setTimeout(shift, 150);
+  } else {
+    block = block.previousElementSibling;
   }
-  this.Pop = function () {
-    //If there are no items, returns null. (avoid error)
-    if (top === null) {
-        return null;
-    }
-    else {
-        //assigns top to a temp variable
-        var out = top;
+}
 
-        //makes the TOP as the next in line
-        top = top.next;
-
-        //there still are items on the stack
-        if (count > 0) {
-            count--;
-        }
-
-        //returns the value that was removed
-        return out.data;
+function pop() {
+  if(block.nextElementSibling) {
+    block = block.nextElementSibling;
+  } else {
+    if(block.style.visibility = 'hidden') {
+      stack.style.backgroundColor = 'red';
+      setTimeout(shift2, 150);
     }
   }
-  this.DisplayAll = function(){
+  block.style.visibility = 'hidden';
+}
 
-    if (top === null) {
-        return null;
-    }
-    else {
-        //instantiate an array
-        var arr = new Array();
-        //creates a node to move through the stack
-        var current = top;
-
-        //moves through the stack until it reaches the bottom item
-        for (var i = 0; i < count; i++) {
-            //assigns the data to the array
-            arr[i] = current.data;
-            //advances one step
-            current = current.next;
-        }
-        //returns the array
-        return arr;
-    }
-  }
+function reset() {
+  $('.stack').css('visibility', 'hidden');
+  block = stack.lastElementChild;
 }

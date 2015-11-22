@@ -3,27 +3,46 @@
   <head>
     <title>Stack Data Structure Visual</title>
     <link rel='stylesheet' href='css/test.css' type='text/css'/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   </head>
   <body>
     <header>
       <div id='title'>
-        <h1>Data Structure - Stack</h1>
+        <h1>Stack</h1>
       </div>
-      <div id='reset-button'>
+      <div id='reset-button' onclick='reset()'>
         <p>Reset</p>
       </div>
     </header>
     <div id='main'>
       <div id='stack'>
+        <div class='top-stack' style='visibility: hidden;'></div>
+        <div class='stack'></div>
+        <div class='stack'></div>
+        <div class='stack'></div>
+        <div class='stack'></div>
+        <div class='stack'></div>
+        <div class='stack'></div>
+        <div class='stack'></div>
+        <div class='stack'></div>
+        <div class='stack'></div>
+        <div class='stack'></div>
+        <div class='stack'></div>
+        <div class='stack'></div>
+        <div class='stack'></div>
+        <div class='stack'></div>
+        <div class='stack'></div>
+        <div class='stack'></div>
       </div>
     </div>
     <div id='controls'>
-      <div id='push' class='control-button' onclick='stack.Push(1)'>
+      <div id='push' class='control-button' onclick='push()'>
         <h4>Push</h4>
       </div>
-      <div id='pop' class='control-button' onclick='stack.Pop()'>
+      <div id='pop' class='control-button' onclick='pop()'>
         <h4>Pop</h4>
       </div>
     </div>
+    <script src='js/test.js'></script>
   </body>
 </html>

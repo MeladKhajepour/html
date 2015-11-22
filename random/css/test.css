@@ -39,6 +39,11 @@ header {
   transition: 0.25s;
 }
 
+#reset-button:active {
+  background-color: #B71C1C;
+  transition: 0.1s;
+}
+
 #reset-button p {
   font-size: 16px;
   position: relative;
@@ -63,6 +68,7 @@ header {
   width: 250px;
   background-color: #5C6BC0;
   box-shadow: 0 2px 6px 3px rgba(0, 0, 0, 0.7) inset;
+  transition: 0.2s;
 }
 
 #controls {
@@ -96,6 +102,11 @@ header {
   transition: 0.25s;
 }
 
+#controls #push:active {
+  background-color: #C2185B;
+  transition: 0.1s;
+}
+
 #controls #pop {
   height: 100%;
   text-align: center;
@@ -119,4 +130,34 @@ header {
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.7);
   background-color: #E91E63;
   transition: 0.25s;
+}
+
+#controls #pop:active {
+  background-color: #C2185B;
+  transition: 0.1s;
+}
+
+#main #stack .stack {
+  visibility: hidden;
+  margin-left: 50%;
+  margin-top: 2px;
+  transform: translate(-50%);
+  position: relative;
+  background-color: #333;
+  border: 2px solid black;
+  width: 75%;
+  height: 20px;
+  transition: 0.2s;
+}
+
+#main #stack .top-stack {
+  visibility: hidden !important;
+  margin-left: 50%;
+  margin-top: 2px;
+  transform: translate(-50%);
+  position: relative;
+  background-color: #333;
+  border: 2px solid black;
+  width: 75%;
+  height: 20px;
 }

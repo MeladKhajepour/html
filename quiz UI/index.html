@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML5 Quiz</title>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' href='css/style.css' type='text/css'>
+</head>
+<body>
+  <div class='container'>
+    <header>
+      <div class='pull-left'>Photography Quiz</div>
+      <div class='pull-right'>...</div>
+    </header>
+    <main>
+      <form class='questionForm' id='q1' data-question='1'>
+        <h3>1. Which f-stop will result in a shallow depth of field? </h3>
+        <ul>
+          <li><input type='radio' name='q1' value='a'/>f/22</li>
+          <li><input type='radio' name='q1' value='b'/>f/1.9</li>
+          <li><input type='radio' name='q1' value='c'/>f/18</li>
+          <li><input type='radio' name='q1' value='d'/>f/7.2</li>
+        </ul>
+        <button id='submit'>Submit</button>
+      </form>
+
+      <form class='questionForm' id='q2' data-question='2'>
+        <h3>2. For fast moving subjects, which shutter speed would be preferred?</h3>
+        <ul>
+          <li><input type='radio' name='q2' value='a'/>1/30"</li>
+          <li><input type='radio' name='q2' value='b'/>1.2"</li>
+          <li><input type='radio' name='q2' value='c'/>1/125"</li>
+          <li><input type='radio' name='q2' value='d'/>1/2"</li>
+        </ul>
+        <button id='submit'>Submit</button>
+      </form>
+
+      <form class='questionForm' id='q3' data-question='3'>
+        <h3>3. Which picture was most likely taken in a very dark room?</h3>
+        <ul>
+          <li><input type='radio' name='q3' value='a'/>1/8", f/1.9, ISO 400</li>
+          <li><input type='radio' name='q3' value='b'/>1/30", f/1.9, ISO 200</li>
+          <li><input type='radio' name='q3' value='c'/>1/2", f/22, ISO 400</li>
+          <li><input type='radio' name='q3' value='d'/>1/15", f/7.2, ISO 50</li>
+        </ul>
+        <button id='submit'>Submit</button>
+      </form>
+
+      <form class='questionForm' id='q4' data-question='4'>
+        <h3>4. Which white-balance is most suitable for a cloudy day?</h3>
+        <ul>
+          <li><input type='radio' name='q4' value='a'/>2000k</li>
+          <li><input type='radio' name='q4' value='b'/>6700k</li>
+          <li><input type='radio' name='q4' value='c'/>4500k</li>
+          <li><input type='radio' name='q4' value='d'/>6000k</li>
+        </ul>
+        <button id='submit'>Submit</button>
+      </form>
+
+      <form class='questionForm' id='q5' data-question='5'>
+        <h3>5. Which scenario is most applicable for HDR photography?</h3>
+        <ul>
+          <li><input type='radio' name='q5' value='a'/>Backlit photo of a forest</li>
+          <li><input type='radio' name='q5' value='b'/>Landscape picture of mountains on a sunny day</li>
+          <li><input type='radio' name='q5' value='c'/>Portrait against a brick wall</li>
+          <li><input type='radio' name='q5' value='d'/>Macro shot of an insect</li>
+        </ul>
+        <button id='submit'>Submit</button>
+      </form>
+
+      <div id='results'></div>
+      <br>
+    </main>
+    <footer>
+      <div class='pull-left'>Total: 5 Questions</div>
+    </footer>
+  </div>
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src='js/quiz.js'></script>
+</body>
+</html>

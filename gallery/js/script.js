@@ -7,7 +7,7 @@ $(document).ready(function() {
   var num = setTimeout(count, 50);
   function count() {
       if (counter < 100){
-          counter += 1;
+          counter++;
           $('#index').css('opacity', counter/100);
           setTimeout(count, 10);
       }

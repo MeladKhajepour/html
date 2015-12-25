@@ -44,11 +44,10 @@ $(document).ready(function() {
     } else {
       headers[1].style.opacity = 0;
     }
-    //containers[1].style.top = '-250px';
-    containers[1].style.marginBottom = '-250px';
-    headers[1].style.top =  0.5*(250 - second.top) + 'px';
+    headers[1].style.top =  0.5*(1250 - second.top) + 'px';
     titles[1].style.top = (275 - (350 - second.top)*0.25) + 'px';
 
+console.log(second.top );
     //Third display
     if(second.bottom < $(window).height() + 10 && second.bottom >= $(window).height() - 350) {
       headers[2].style.opacity = (($(window).height() - second.bottom)/350)*0.85;
@@ -61,7 +60,7 @@ $(document).ready(function() {
       headers[2].style.opacity = 0;
     }
     //containers[2].style.top = '-250px';
-    headers[2].style.top =  0.5*(375 - third.top) + 'px';
+    headers[2].style.top =  0.5*(1850 - third.top) + 'px';
     titles[2].style.top = (200 - (350 - third.top)*0.25) + 'px';
   })
 })

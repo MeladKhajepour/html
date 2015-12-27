@@ -1,5 +1,5 @@
 var headers = document.getElementsByClassName('header');
-var containers = document.getElementsByClassName('container');
+var containers = document.getElementsByClassName('box');
 var titles = document.getElementsByClassName('title');
 
 $(document).ready(function() {
@@ -13,9 +13,26 @@ $(document).ready(function() {
       }
   }
 
+  
+  var i = 0;
+  var images = [];
+  for(i; i < containers.length; i++) {
+    containers[i].innerHTML = '<div class="holder">' +
+                              '<div class="col-xs-4 col-md-3 pic"><img/></div>' +
+                              '<div class="col-xs-4 col-md-3 pic"><img/></div>' +
+                              '<div class="col-xs-4 col-md-3 pic"><img/></div>' +
+                              '</div>';
+    images[i] = containers[i].getElementsByTagName('img');
+    var j = 0;
+    for(j; j < images[i].length; j++) {
+      images[i][j].setAttribute('src', 'pics/Overam' + (j + 1) + '.jpg');
+    }
+  }
+  images = null;
 
 
   $(window).scroll(function(i){
+    /*
     containers[0].style.top = '350px';
     containers[1].style.top = '1200px';
     containers[2].style.top = '2050px';
@@ -47,7 +64,6 @@ $(document).ready(function() {
     headers[1].style.top =  0.5*(1250 - second.top) + 'px';
     titles[1].style.top = (275 - (350 - second.top)*0.25) + 'px';
 
-console.log(second.top );
     //Third display
     if(second.bottom < $(window).height() + 10 && second.bottom >= $(window).height() - 350) {
       headers[2].style.opacity = (($(window).height() - second.bottom)/350)*0.85;
@@ -59,8 +75,8 @@ console.log(second.top );
     } else {
       headers[2].style.opacity = 0;
     }
-    //containers[2].style.top = '-250px';
     headers[2].style.top =  0.5*(1850 - third.top) + 'px';
     titles[2].style.top = (200 - (350 - third.top)*0.25) + 'px';
+    */
   })
 })

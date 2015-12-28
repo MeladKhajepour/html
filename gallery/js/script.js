@@ -1,5 +1,5 @@
 var headers = document.getElementsByClassName('header');
-var containers = document.getElementsByClassName('container');
+var containers = document.getElementsByClassName('box');
 var titles = document.getElementsByClassName('title');
 
 $(document).ready(function() {

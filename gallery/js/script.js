@@ -13,6 +13,22 @@ $(document).ready(function() {
       }
   }
 
+  var i = 0;
+  var images = [];
+  for(i; i < containers.length; i++) {
+    containers[i].innerHTML = '<div class="holder">' +
+                              '<div class="col-xs-4 col-md-3 pic"><img/></div>' +
+                              '<div class="col-xs-4 col-md-3 pic"><img/></div>' +
+                              '<div class="col-xs-4 col-md-3 pic"><img/></div>' +
+                              '</div>';
+    images[i] = containers[i].getElementsByTagName('img');
+    var j = 0;
+    for(j; j < images[i].length; j++) {
+      images[i][j].setAttribute('src', 'pics/Overam' + (j + 1) + '.jpg');
+    }
+  }
+  images = null;
+
 
 
   $(window).scroll(function(i){

@@ -13,7 +13,8 @@ $(document).ready(function() {
       }
   }
 
-  
+
+
   var i = 0;
   var images = [];
   for(i; i < containers.length; i++) {

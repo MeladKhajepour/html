@@ -1,4 +1,3 @@
-
 body {
   background: #000;
   margin: 0;
@@ -82,13 +81,12 @@ a {
   perspective: 1px;
   height: 100vh;
   overflow-x: hidden;
-  overflow-y: auto;
 }
 
 .header {
   height: 100vh;
   width: 100%;
-  background: url('../pics/20151004_134559-01.jpeg');
+  background: url('../pics/20151207_124734-01.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -98,7 +96,7 @@ a {
 
 .header:nth-of-type(2) {
   height: 100vh;
-  background: url('../pics/20151207_124734-01.jpeg');
+  background: url('../pics/20151004_134559-01.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -143,7 +141,7 @@ a {
 
 .box .holder .pic {
   overflow: hidden;
-  height: 90%;
+  height: 98%;
   top: 50%;
   transform: translateY(-50%);
   border: 4px solid black;

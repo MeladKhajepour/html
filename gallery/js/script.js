@@ -2,6 +2,12 @@ var headers = document.getElementsByClassName('header');
 var containers = document.getElementsByClassName('box');
 var titles = document.getElementsByClassName('title');
 
+//Img containers
+var first = $('.first');
+var second = $('.second');
+var third = $('.third');
+var height = window.innerHeight;
+
 $(document).ready(function() {
   var counter = 0;
   var num = setTimeout(count, 50);
@@ -14,15 +20,24 @@ $(document).ready(function() {
   }
 
 
-
+  //Temporary image fillers
   var i = 0;
   var images = [];
   for(i; i < containers.length; i++) {
-    containers[i].innerHTML = '<div class="holder">' +
-                              '<div class="col-xs-4 col-md-3 pic"><img/></div>' +
-                              '<div class="col-xs-4 col-md-3 pic"><img/></div>' +
-                              '<div class="col-xs-4 col-md-3 pic"><img/></div>' +
-                              '</div>';
+    if(window.innerWidth >= 992) {
+      containers[i].innerHTML = '<div class="holder">' +
+                                '<div class="col-xs-4 col-md-3 pic"><img/></div>' +
+                                '<div class="col-xs-4 col-md-3 pic"><img/></div>' +
+                                '<div class="col-xs-4 col-md-3 pic"><img/></div>' +
+                                '<div class="col-xs-4 col-md-3 pic"><img/></div>' +
+                                '</div>';
+    } else {
+      containers[i].innerHTML = '<div class="holder">' +
+                                '<div class="col-xs-4 col-md-3 pic"><img/></div>' +
+                                '<div class="col-xs-4 col-md-3 pic"><img/></div>' +
+                                '<div class="col-xs-4 col-md-3 pic"><img/></div>' +
+                                '</div>';
+    }
     images[i] = containers[i].getElementsByTagName('img');
     var j = 0;
     for(j; j < images[i].length; j++) {
@@ -31,53 +46,55 @@ $(document).ready(function() {
   }
   images = null;
 
+  i = 0;
 
-  $(window).scroll(function(i){
-    /*
-    containers[0].style.top = '350px';
-    containers[1].style.top = '1200px';
-    containers[2].style.top = '2050px';
-    var first = containers[0].getBoundingClientRect();
-    var second = containers[1].getBoundingClientRect();
-    var third = containers[2].getBoundingClientRect();
-
-    //First display
-      if((first.top)/350 > 0.85 && first.top > 0) {
-        headers[0].style.opacity = 0.85;
-      } else if(first.top > 0){
-        headers[0].style.opacity = (first.top)/350;
-      } else {
-        headers[0].style.opacity = 0;
-      }
-      headers[0].style.top =  0.5*(350 - first.top) + 'px';
-      titles[0].style.top = (175 - (350 - first.top)*0.25) + 'px';
-
-    //Second display
-    if(first.bottom < $(window).height() + 10 && first.bottom >= $(window).height() - 350) {
-      headers[1].style.opacity = (($(window).height() - first.bottom)/350)*0.85;
-    } else if(first.bottom < $(window).height() - 350 && first.bottom > 0) {
-      headers[1].style.opacity = 0.85;
-    } else if(first.bottom <= 0 && headers[1].style.opacity >= 0) {
-      headers[1].style.opacity = ((350 + first.bottom)/350)*0.85;
-    } else {
-      headers[1].style.opacity = 0;
+  //Resize handler wip
+  /*if(window.innerWidth < 992) {
+    for(i; i < containers.length; i++) {
+      var img = containers[i].getElementsByTagName('img');
+      img[3].css('display', 'none');
     }
-    headers[1].style.top =  0.5*(1250 - second.top) + 'px';
-    titles[1].style.top = (275 - (350 - second.top)*0.25) + 'px';
-
-    //Third display
-    if(second.bottom < $(window).height() + 10 && second.bottom >= $(window).height() - 350) {
-      headers[2].style.opacity = (($(window).height() - second.bottom)/350)*0.85;
-    } else if(second.bottom < $(window).height() - 350 && second.bottom > 0) {
-      headers[2].style.opacity = 0.85;
-    } else if(second.bottom <= 0){
-      //Dont fade on last display
-      //headers[2].style.opacity = ((350 + second.bottom)/350)*0.85;
-    } else {
-      headers[2].style.opacity = 0;
+  } else {
+    for(i; i < containers.length; i++) {
+      var img = containers[i].getElementsByTagName('img');
+      img[3].css('display', 'block');
     }
-    headers[2].style.top =  0.5*(1850 - third.top) + 'px';
-    titles[2].style.top = (200 - (350 - third.top)*0.25) + 'px';
-    */
+  }*/
+
+  //Fade headers
+  $('.parallax').scroll(function() {
+    if(first.offset().top < height/2){
+      $('.header:first').css('opacity', (first.offset().top/height)*2)
+    } else {
+      $('.header:first').css('opacity', 1);
+    }
+    if(second.offset().top < height/2){
+      $('.header:nth-of-type(2)').css('opacity', (second.offset().top/height)*2)
+    } else {
+      $('.header:nth-of-type(2)').css('opacity', 1);
+    }
+    if(third.offset().top < height/2){
+      $('.header:nth-of-type(3)').css('opacity', (third.offset().top/height)*2)
+    } else {
+      $('.header:nth-of-type(3)').css('opacity', 1);
+    }
+
+    //Fade boxes
+    if(first.offset().top < height * -0.25) {
+      $('.first').css('opacity', ((first.offset().top + height*0.75)/height)*2);
+    } else {
+      $('.first').css('opacity', 1);
+    }
+    if(first.offset().top < height * -0.5) {
+      $('.second').css('opacity', ((second.offset().top + height*0.75)/height)*2);
+    } else {
+      $('.second').css('opacity', 1);
+    }
+    if(first.offset().top < height * -0.5) {
+      $('.third').css('opacity', ((third.offset().top + height*0.75)/height)*2);
+    } else {
+      $('.second').css('opacity', 1);
+    }
   })
+
 })

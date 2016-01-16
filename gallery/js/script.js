@@ -80,18 +80,18 @@ $(document).ready(function() {
     }
 
     //Fade boxes
-    if(first.offset().top < height * -0.25) {
-      $('.first').css('opacity', ((first.offset().top + height*0.75)/height)*2);
+    if(first.offset().top < height * -0.6) {
+      $('.first').css('opacity', ((first.offset().top + height)/height)*(1/0.4));
     } else {
       $('.first').css('opacity', 1);
     }
     if(first.offset().top < height * -0.5) {
-      $('.second').css('opacity', ((second.offset().top + height*0.75)/height)*2);
+      $('.second').css('opacity', ((second.offset().top + height)/height)*(1/0.4));
     } else {
       $('.second').css('opacity', 1);
     }
     if(first.offset().top < height * -0.5) {
-      $('.third').css('opacity', ((third.offset().top + height*0.75)/height)*2);
+      $('.third').css('opacity', ((third.offset().top + height)/height)*(1/0.4));
     } else {
       $('.second').css('opacity', 1);
     }
